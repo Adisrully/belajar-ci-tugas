@@ -18,14 +18,14 @@
         </li><!-- End Keranjang Nav -->
         <?php
         if (session()->get('role') == 'admin') {
-        ?>
+            ?>
             <li class="nav-item">
                 <a class="nav-link <?php echo (uri_string() == 'produk') ? "" : "collapsed" ?>" href="produk">
                     <i class="bi bi-receipt"></i>
                     <span>Produk</span>
                 </a>
             </li><!-- End Produk Nav -->
-        <?php
+            <?php
         }
         ?>
 
@@ -35,7 +35,19 @@
                 <span>Profile</span>
             </a>
         </li> <!-- End Profile Nav -->
+        <?php
 
+        if (session()->get('role') == 'admin') {
+            ?>
+            <li class="nav-item">
+                <a class="nav-link <?php echo (uri_string() == 'transaksi') ? "" : "collapsed" ?>" href="transaksi">
+                    <i class="bi bi-bag"></i>
+                    <span>Transaksi</span>
+                </a>
+            </li> <!-- End Profile Nav -->
+            <?php
+        }
+        ?>
         <li class="nav-item">
             <a class="nav-link <?php echo (uri_string() == 'faq') ? "" : "collapsed" ?>" href="faq">
                 <i class="bi bi-question-circle"></i>
